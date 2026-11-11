@@ -1,6 +1,5 @@
 # Dependencies & runtime outputs
 node_modules/
-package-lock.json
 
 # Secrets, environment & OAuth tokens
 .env

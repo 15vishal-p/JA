@@ -63,3 +63,9 @@ google-chrome --remote-debugging-port=9222 --user-data-dir="$HOME/.config/jobkit
 - [`docs/AI_ASSISTANT_COORDINATION.md`](./docs/AI_ASSISTANT_COORDINATION.md) — How Antigravity, Gemini, and ChatGPT share state and avoid overwriting work
 - [`docs/SCHEDULES_ARCHITECTURE.md`](./docs/SCHEDULES_ARCHITECTURE.md) — Scheduled automation patterns, checkpoints, and observability
 - [`docs/FILE_INVENTORY.md`](./docs/FILE_INVENTORY.md) — Complete per-file inventory, inputs, outputs, external side effects, and known limitations
+
+## Tracker identity and validation
+
+Jobs use normalized employer plus requisition; a canonical HTTP(S) URL is the fallback. Keep meaningful URL query parameters. Records missing both identities are rejected. ID-only status updates reject employer ambiguity. Status summaries recognize explicit labels; unknown legacy labels remain unclassified. Custom profiles require nonempty names, valid email and E.164 phone, actual residence, and no unresolved placeholders.
+
+Use `npm ci --ignore-scripts` with the committed lockfile, then `npm run verify`. CI runs the same checks on Node 20 and 22; it performs no live applications.

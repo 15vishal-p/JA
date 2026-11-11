@@ -15,6 +15,40 @@ function normalizeKey(str) {
   return String(str || '').trim().toLowerCase().replace(/\s+/g, ' ');
 }
 
+function canonicalUrl(value) {
+  if (!value) return '';
+  const url = new URL(value);
+  if (!['http:', 'https:'].includes(url.protocol)) throw new Error('Job URL must use HTTP(S).');
+  url.hash = '';
+  for (const key of [...url.searchParams.keys()]) {
+    if (/^utm_|^(gclid|fbclid)$/i.test(key)) url.searchParams.delete(key);
+  }
+  url.searchParams.sort();
+  url.pathname = url.pathname.replace(/\/+$/, '') || '/';
+  return url.toString();
+}
+
+function jobKey(job) {
+  const employer = normalizeKey(job.company);
+  const requisition = normalizeKey(job.id);
+  if (employer && requisition) return `req:${employer}|${requisition}`;
+  const url = canonicalUrl(job.link || job.url);
+  if (url) return `url:${url}`;
+  throw new Error('Job requires employer plus requisition, or a canonical URL.');
+}
+
+const STATUS_GROUPS = {
+  applied: new Set(['applied', 'applied & confirmed', 'applied (verified)']),
+  ready: new Set(['ready', 'ready to apply', 'staged']),
+  blocked: new Set(['blocked', 'held', 'needs verification', 'captcha', 'hcaptcha']),
+  closed: new Set(['closed', 'expired', 'skipped', 'closed / expired'])
+};
+function statusGroup(value) {
+  // Compatibility with existing dated status labels; no substring classification.
+  const status = normalizeKey(value).replace(/\s*\(\d{4}-\d{2}-\d{2}\)$/, '');
+  return Object.keys(STATUS_GROUPS).find(group => STATUS_GROUPS[group].has(status)) || 'other';
+}
+
 function escapeCsvCell(val) {
   const s = String(val ?? '');
   if (/[",\r\n]/.test(s)) {
@@ -65,21 +99,15 @@ class LocalStorageAdapter {
   }
 
   hasDuplicateJob(candidateJob) {
-    const jobs = this.listJobs();
-    const cid = normalizeKey(candidateJob.id);
-    const curl = normalizeKey(candidateJob.link);
-    const cKey = `${normalizeKey(candidateJob.company)}|${normalizeKey(candidateJob.title)}`;
-    return jobs.some((existing) => {
-      if (cid && normalizeKey(existing.id) === cid) return true;
-      if (curl && normalizeKey(existing.link) === curl) return true;
-      return `${normalizeKey(existing.company)}|${normalizeKey(existing.title)}` === cKey;
-    });
+    const key = jobKey(candidateJob);
+    return this.listJobs().some(existing => jobKey(existing) === key);
   }
 
   upsertJob(job) {
     const data = this._readJson(this.jobsFile, { jobs: [] });
     const jobs = data.jobs || [];
-    const idx = jobs.findIndex((j) => normalizeKey(j.id) === normalizeKey(job.id) && normalizeKey(j.region || '') === normalizeKey(job.region || ''));
+    const key = jobKey(job);
+    const idx = jobs.findIndex(j => jobKey(j) === key);
     const stamped = {
       ...job,
       updatedAt: job.updatedAt || new Date().toISOString().slice(0, 10)
@@ -98,6 +126,9 @@ class LocalStorageAdapter {
     const data = this._readJson(this.jobsFile, { jobs: [] });
     let updated = 0;
     const targetId = normalizeKey(jobId);
+    const matches = (data.jobs || []).filter(j => targetId && normalizeKey(j.id) === targetId &&
+      (!region || normalizeKey(region) === 'all' || normalizeKey(j.region) === normalizeKey(region)));
+    if (new Set(matches.map(jobKey)).size > 1) throw new Error('Ambiguous job ID; update by employer/requisition through upsertJob.');
     for (const j of data.jobs || []) {
       const regionMatch = !region || normalizeKey(region) === 'all' || normalizeKey(j.region) === normalizeKey(region);
       if (regionMatch && targetId && normalizeKey(j.id) === targetId) {
@@ -163,10 +194,10 @@ class LocalStorageAdapter {
 
   getSummaryCounts() {
     const jobs = this.listJobs();
-    const applied = jobs.filter((j) => /applied/i.test(j.status || '') && !/already applied|duplicate/i.test(j.status || ''));
-    const ready = jobs.filter((j) => /ready|staged/i.test(j.status || ''));
-    const blocked = jobs.filter((j) => /blocked|hcaptcha|captcha/i.test(j.status || ''));
-    const closed = jobs.filter((j) => /closed|expired|skipped/i.test(j.status || ''));
+    const applied = jobs.filter(j => statusGroup(j.status) === 'applied');
+    const ready = jobs.filter(j => statusGroup(j.status) === 'ready');
+    const blocked = jobs.filter(j => statusGroup(j.status) === 'blocked');
+    const closed = jobs.filter(j => statusGroup(j.status) === 'closed');
     return {
       total: jobs.length,
       aboveThreshold90: jobs.filter((j) => Number(j.score) >= 90).length,
@@ -245,6 +276,7 @@ function createStorageAdapter(cfg) {
 }
 
 module.exports = {
+  jobKey, canonicalUrl, statusGroup,
   LocalStorageAdapter,
   createStorageAdapter
 };

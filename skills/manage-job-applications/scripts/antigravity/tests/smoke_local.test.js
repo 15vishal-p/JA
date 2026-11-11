@@ -60,7 +60,7 @@ test('LocalStorageAdapter performs tracker CRUD, dedup, CSV and Markdown renderi
     };
     storage.upsertJob(job);
     assert.equal(storage.hasDuplicateJob(job), true);
-    assert.equal(storage.hasDuplicateJob({ id: 'OTHER', company: 'Example Test Corp', title: 'Financial Analyst' }), true);
+    assert.equal(storage.hasDuplicateJob({ id: 'OTHER', company: 'Example Test Corp', title: 'Financial Analyst' }), false);
 
     const updated = await storage.updateStatus('secondary', 'TEST-101', 'Applied & Confirmed (2026-11-11)');
     assert.equal(updated, 1);
@@ -132,4 +132,44 @@ test('CV distinguishes residence from a target city', () => {
   const html = buildCompliantHtml({ cityHeader: 'Berlin, Germany', profile: cfg.profile });
   assert.match(html, /Location:<\/strong> Example Residence, Example Country/);
   assert.match(html, /Target \/ relocation preference: Berlin, Germany/);
+});
+
+test('identity separates employers and missing requisitions; canonical URL is fallback', () => {
+  const { jobKey } = require('../src/lib/storage');
+  assert.notEqual(jobKey({ company: 'Alpha', id: '123' }), jobKey({ company: 'Beta', id: '123' }));
+  assert.equal(jobKey({ link: 'https://example.com/job/1/?utm_source=mail#top' }), jobKey({ link: 'https://example.com/job/1' }));
+  assert.throws(() => jobKey({ company: 'Alpha', title: 'Analyst' }), /requires employer/);
+  const tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'jobkit-identity-'));
+  try {
+    const cfg = loadConfig({ loadEnv: false }); cfg.paths.localDataDir = tmpRoot; cfg.paths.cvOutputDir = path.join(tmpRoot, 'cvs');
+    const store = createStorageAdapter(cfg);
+    store.upsertJob({ region: 'primary', company: 'Alpha', link: 'https://example.com/jobs/a' });
+    store.upsertJob({ region: 'primary', company: 'Alpha', link: 'https://example.com/jobs/b' });
+    store.upsertJob({ region: 'primary', company: 'Alpha', id: '123' });
+    store.upsertJob({ region: 'primary', company: 'Beta', id: '123' });
+    assert.equal(store.listJobs().length, 4);
+    assert.equal(store.hasDuplicateJob({ company: 'Gamma', id: '123' }), false);
+    assert.throws(() => store.localMirror.updateStatus('primary', '123', 'Closed'), /Ambiguous/);
+    store.upsertJob({ company: 'Alpha', id: '123', status: 'Closed' });
+    assert.equal(store.listJobs().length, 4);
+    assert.equal(store.listJobs().find(j => j.company === 'Beta').status, undefined);
+  } finally { fs.rmSync(tmpRoot, { recursive: true, force: true }); }
+});
+
+test('explicit status classification excludes negative and uncertain application labels', () => {
+  const { statusGroup } = require('../src/lib/storage');
+  for (const label of ['Not applied', 'Unapplied', 'Already applied elsewhere', 'Applied?', 'Application submitted - unverified']) assert.notEqual(statusGroup(label), 'applied');
+  for (const label of ['Applied', 'Applied & Confirmed (2026-11-11)', 'Applied (Verified)']) assert.equal(statusGroup(label), 'applied');
+});
+
+test('custom profiles require valid identity, contact and location without placeholders', () => {
+  const candidate = { fullName: 'Example Person', firstName: 'Example', lastName: 'Person', email: 'person@example.com', phone: '+12025550123', homeCity: 'Example City', homeCountry: 'Example Country' };
+  const cfg = { meta: { profileIsExample: false }, profile: { candidate } };
+  assert.doesNotThrow(() => assertRealProfile(cfg));
+  for (const field of Object.keys(candidate)) {
+    const value = candidate[field]; candidate[field] = ''; assert.throws(() => assertRealProfile(cfg), /missing/); candidate[field] = value;
+  }
+  candidate.email = 'invalid'; assert.throws(() => assertRealProfile(cfg), /email/); candidate.email = 'person@example.com';
+  candidate.phone = '123'; assert.throws(() => assertRealProfile(cfg), /E.164/); candidate.phone = '+12025550123';
+  cfg.profile.cvTemplate = { summary: '{{UNRESOLVED}}' }; assert.throws(() => assertRealProfile(cfg), /placeholders/);
 });

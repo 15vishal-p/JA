@@ -117,13 +117,22 @@ function loadConfig(options = {}) {
 }
 
 function assertRealProfile(cfg) {
-  const email = cfg?.profile?.candidate?.email || '';
-  const name = cfg?.profile?.candidate?.fullName || '';
-  if (cfg?.meta?.profileIsExample || /\{\{.+\}\}/.test(email) || /\{\{.+\}\}/.test(name)) {
-    throw new Error(
-      'Refusing live submission with placeholder profile data. Copy config/profile.example.json to config/profile.json and fill in real candidate values.'
-    );
+  const candidate = cfg?.profile?.candidate || {};
+  const required = ['fullName', 'firstName', 'lastName', 'email', 'phone', 'homeCity', 'homeCountry'];
+  if (cfg?.meta?.profileIsExample) throw new Error('Refusing live submission with example profile data.');
+  for (const field of required) {
+    if (typeof candidate[field] !== 'string' || !candidate[field].trim()) {
+      throw new Error(`Required candidate field is missing: ${field}`);
+    }
   }
+  const hasPlaceholder = value => typeof value === 'string' ? /\{\{|\}\}|YYYY-MM/.test(value) :
+    value && typeof value === 'object' && Object.values(value).some(hasPlaceholder);
+  if (hasPlaceholder(cfg.profile)) {
+    throw new Error('Unresolved profile placeholders; confirm facts before filling forms.');
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(candidate.email)) throw new Error('Invalid candidate email.');
+  if (!/^\+[1-9]\d{6,14}$/.test(candidate.phone)) throw new Error('Candidate phone must use E.164 format.');
+
 }
 
 function ensureDirs(cfg) {
