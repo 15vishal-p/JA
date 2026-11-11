@@ -1,0 +1,29 @@
+# Dependencies & runtime outputs
+node_modules/
+package-lock.json
+
+# Secrets, environment & OAuth tokens
+.env
+.env.*
+!.env.example
+secrets/
+*token*.json
+*credentials*.json
+client_secret*.json
+
+# Installer-specific configs with real PII
+config/profile.json
+config/answers.json
+config/rules.json
+config/targets.json
+
+# Local runtime state, CVs, screenshots, receipts
+data/
+output/
+cvs/
+artifacts/
+*.pdf
+*.png
+*.jpg
+*.xlsx
+!config/*.example.json

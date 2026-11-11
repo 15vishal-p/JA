@@ -1,0 +1,64 @@
+{
+  "boardProbes": [
+    {
+      "company": "Example FinTech GmbH",
+      "country": "Germany",
+      "ats": "greenhouse",
+      "slug": "example-fintech-board-slug",
+      "eu": false
+    },
+    {
+      "company": "Example Payments AB",
+      "country": "Sweden",
+      "ats": "ashby",
+      "slug": "example-payments-slug"
+    },
+    {
+      "company": "Example Analytics s.r.o.",
+      "country": "Slovakia",
+      "ats": "smartrecruiters",
+      "slug": "ExampleAnalytics"
+    }
+  ],
+  "roleRegex": "\\b(financ|account|ap |ar |gl |r2r|record[- ]to[- ]report|controll|fp&a|fpa|treasury|tax|audit|reconcil|billing|revenue|payroll|data analyst|business analyst|bi |reporting|insight|analytics)\\b",
+  "excludeRegex": "\\b(intern|internship|werkstudent|working student|student|trainee|director|vp|vice president|head of|chief|cfo|principal|staff|architect|counsel|legal counsel|software engineer|backend|frontend|fullstack|devops|sre|ios|android|designer|recruiter|talent acquisition|sales executive|account executive|customer support)\\b",
+  "targetLocationsRegex": "\\b(berlin|munich|münchen|frankfurt|walldorf|hamburg|germany|amsterdam|netherlands|tallinn|estonia|barcelona|madrid|spain|luxembourg|stockholm|sweden|bratislava|kosice|košice|slovakia|europe|emea|remote)\\b",
+  "sampleJobs": [
+    {
+      "id": "EXAMPLE-JOB-001",
+      "company": "Example Tech GmbH",
+      "title": "Junior Financial Accountant (m/f/d)",
+      "location": "Berlin, Germany",
+      "region": "secondary",
+      "score": 93,
+      "status": "Ready to Apply",
+      "ats": "greenhouse",
+      "link": "https://job-boards.greenhouse.io/examplecorp/jobs/0000000001",
+      "headline": "General Ledger & Financial Accounting Specialist | SAP, Excel, Month-End Close",
+      "summary": "Finance graduate targeting General Ledger & Reporting in Berlin. Experienced in reconciliations, journal entries, variance checks, and SQL/Excel reporting.",
+      "includeEtlProject": false,
+      "salaryAnswer": "As per company offer",
+      "workAuthPrimaryCountry": false,
+      "previousEmployee": false,
+      "relatedEmployee": false
+    },
+    {
+      "id": "EXAMPLE-JOB-002",
+      "company": "Example Data B.V.",
+      "title": "Financial Data & BI Analyst",
+      "location": "Amsterdam, Netherlands",
+      "region": "secondary",
+      "score": 92,
+      "status": "Ready to Apply",
+      "ats": "ashby",
+      "link": "https://jobs.ashbyhq.com/examplecorp/00000000-0000-0000-0000-000000000002",
+      "headline": "Financial Data & BI Analyst | SQL, Python, Reporting & Reconciliations",
+      "summary": "Analytical finance and data graduate experienced in financial reconciliations, SQL reporting, Python data automation, and interactive KPI dashboards.",
+      "includeEtlProject": true,
+      "salaryAnswer": "As per company offer",
+      "workAuthPrimaryCountry": false,
+      "previousEmployee": false,
+      "relatedEmployee": false
+    }
+  ]
+}

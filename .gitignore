@@ -1,0 +1,15 @@
+job-automation-data/
+private/
+.env
+.env.*
+!.env.example
+credentials*.json
+token*.json
+storage-state*.json
+browser-profile/
+node_modules/
+__pycache__/
+*.pdf
+*.docx
+screenshots/
+receipts/

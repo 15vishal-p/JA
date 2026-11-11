@@ -1,0 +1,34 @@
+{
+  "candidate": {
+    "name": "Example Candidate",
+    "actual_location": "Example City, Example Country",
+    "email": "candidate@example.invalid"
+  },
+  "education": [],
+  "experience": [],
+  "skills_with_evidence": [],
+  "languages_with_evidence": [],
+  "work_authorization_by_country": {},
+  "preferences": {
+    "target_regions": [],
+    "minimum_fit_score": 90,
+    "cv_editor": "user-selected",
+    "cv_pages": null,
+    "salary_expectation": null,
+    "notice_period": null,
+    "travel_availability": null,
+    "include_internships": false,
+    "score_exception_policy": null
+  },
+  "authorization": {
+    "mode": "prepare",
+    "application_submission": false
+  },
+  "private_resources": {
+    "master_cv": null,
+    "tracker": null,
+    "cv_archive": null,
+    "confirmed_answers": null,
+    "storage_configuration": null
+  }
+}

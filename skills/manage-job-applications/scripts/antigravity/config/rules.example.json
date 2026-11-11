@@ -1,0 +1,78 @@
+{
+  "scoring": {
+    "strictMode": {
+      "threshold": 90,
+      "allowBelowWithException": true,
+      "weights": {
+        "qualifications": 40,
+        "relevantDuties": 25,
+        "concreteEvidence": 15,
+        "clarityAndTargeting": 10,
+        "applicationReadiness": 10
+      }
+    },
+    "generalMode": {
+      "excellentMin": 90,
+      "goodMin": 75,
+      "possibleMin": 60,
+      "skipBelow": 60,
+      "weights": {
+        "professionalSkills": 30,
+        "relevantExperience": 25,
+        "educationMatch": 15,
+        "locationAndEligibility": 15,
+        "seniorityAndResponsibilities": 15
+      }
+    }
+  },
+  "localization": {
+    "dynamicCityMatchingEnabled": true,
+    "neverUseLocations": ["{{FORBIDDEN_OFFSHORE_CITY}}"],
+    "defaultFallbackCity": "{{HOME_CITY}}, {{HOME_COUNTRY}}",
+    "cityMap": [
+      { "pattern": "berlin", "header": "Berlin, Germany" },
+      { "pattern": "munich|münchen|erlangen", "header": "Munich, Germany" },
+      { "pattern": "frankfurt", "header": "Frankfurt, Germany" },
+      { "pattern": "walldorf", "header": "Walldorf, Germany" },
+      { "pattern": "hamburg", "header": "Hamburg, Germany" },
+      { "pattern": "amsterdam", "header": "Amsterdam, Netherlands" },
+      { "pattern": "eindhoven|veldhoven", "header": "Eindhoven, Netherlands" },
+      { "pattern": "rotterdam", "header": "Rotterdam, Netherlands" },
+      { "pattern": "tallinn", "header": "Tallinn, Estonia" },
+      { "pattern": "barcelona", "header": "Barcelona, Spain" },
+      { "pattern": "madrid", "header": "Madrid, Spain" },
+      { "pattern": "luxembourg", "header": "Luxembourg City, Luxembourg" },
+      { "pattern": "stockholm", "header": "Stockholm, Sweden" },
+      { "pattern": "sofia", "header": "Sofia, Bulgaria" },
+      { "pattern": "bratislava|slovakia", "header": "Bratislava, Slovakia" },
+      { "pattern": "košice|kosice", "header": "Košice, Slovakia" }
+    ]
+  },
+  "flowcv": {
+    "requireManagedTemplateForCities": ["bratislava", "kosice", "košice"],
+    "maxPages": 2,
+    "loginUrl": "https://app.flowcv.com/login"
+  },
+  "deduplication": {
+    "excludeStatuses": ["applied", "closed", "expired", "held", "blocked", "already applied", "duplicate", "skipped"],
+    "requirePortalConfirmationProof": true
+  },
+  "googleSheets": {
+    "regions": {
+      "primary": {
+        "tab": "Active Primary Jobs",
+        "idColumn": 0,
+        "statusColumn": "I",
+        "statusColumnIndex": 8,
+        "headerRange": "Active Primary Jobs!A9:M120"
+      },
+      "secondary": {
+        "tab": "Active Secondary Jobs",
+        "idColumn": 0,
+        "statusColumn": "K",
+        "statusColumnIndex": 10,
+        "headerRange": "Active Secondary Jobs!A9:M120"
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "candidate": {
+    "firstName": "{{FIRST_NAME}}",
+    "lastName": "{{LAST_NAME}}",
+    "fullName": "{{FIRST_NAME}} {{LAST_NAME}}",
+    "email": "{{APPLICANT_EMAIL}}",
+    "phone": "{{APPLICANT_PHONE_E164}}",
+    "phoneLocal": "{{APPLICANT_PHONE_LOCAL}}",
+    "streetAddress": "{{STREET_ADDRESS}}",
+    "homeCity": "{{HOME_CITY}}",
+    "homeCountry": "{{HOME_COUNTRY}}",
+    "postalCode": "{{POSTAL_CODE}}",
+    "linkedinUrl": "https://www.linkedin.com/in/{{LINKEDIN_HANDLE}}/",
+    "linkedinLabel": "linkedin.com/in/{{LINKEDIN_HANDLE}}",
+    "githubUrl": "https://github.com/{{GITHUB_HANDLE}}",
+    "nationality": "{{NATIONALITY}}",
+    "workAuthorizationNote": "{{WORK_AUTHORIZATION_FACTS}}",
+    "availability": "{{CONFIRMED_AVAILABILITY}}",
+    "travelAvailability": "{{CONFIRMED_TRAVEL_AVAILABILITY}}",
+    "relocationWilling": null,
+    "preferredGenderOption": "{{OPTIONAL_SELF_ID_OR_OMIT}}",
+    "preferredAgeBracket": "{{OPTIONAL_AGE_BRACKET_OR_OMIT}}"
+  },
+  "cvTemplate": {
+    "defaultHeadline": "{{VERIFIED_DEFAULTHEADLINE}}",
+    "defaultSummary": "{{VERIFIED_DEFAULTSUMMARY}}",
+    "coreCompetencies": [
+      "{{VERIFIED_SKILL}}"
+    ],
+    "languages": [
+      {
+        "name": "{{LANGUAGE}}",
+        "level": "{{VERIFIED_LEVEL}}",
+        "formLabel": "{{VERIFIED_LEVEL}}"
+      }
+    ],
+    "experience": [
+      {
+        "title": "{{CURRENT_ROLE_TITLE}}",
+        "company": "{{CURRENT_EMPLOYER_NAME}}",
+        "location": "{{CURRENT_ROLE_CITY_COUNTRY}}",
+        "startDate": "{{VERIFIED_STARTDATE}}",
+        "startMonth": "{{VERIFIED_STARTMONTH}}",
+        "startYear": "{{VERIFIED_STARTYEAR}}",
+        "endDate": "{{VERIFIED_ENDDATE}}",
+        "currentlyWorkHere": false,
+        "bullets": [
+          "{{VERIFIED_ACHIEVEMENT}}"
+        ]
+      },
+      {
+        "title": "{{PREVIOUS_INTERN_OR_ROLE_TITLE}}",
+        "company": "{{PREVIOUS_EMPLOYER_NAME}}",
+        "location": "{{PREVIOUS_ROLE_CITY_COUNTRY}}",
+        "startDate": "{{VERIFIED_STARTDATE}}",
+        "startMonth": "{{VERIFIED_STARTMONTH}}",
+        "startYear": "{{VERIFIED_STARTYEAR}}",
+        "endDate": "{{VERIFIED_ENDDATE}}",
+        "endMonth": "{{VERIFIED_ENDMONTH}}",
+        "endYear": "{{VERIFIED_ENDYEAR}}",
+        "currentlyWorkHere": false,
+        "bullets": [
+          "{{VERIFIED_ACHIEVEMENT}}"
+        ]
+      },
+      {
+        "title": "{{EARLIER_ROLE_TITLE}}",
+        "company": "{{EARLIER_EMPLOYER_NAME}}",
+        "location": "{{EARLIER_ROLE_CITY_COUNTRY}}",
+        "startDate": "{{VERIFIED_STARTDATE}}",
+        "startMonth": "{{VERIFIED_STARTMONTH}}",
+        "startYear": "{{VERIFIED_STARTYEAR}}",
+        "endDate": "{{VERIFIED_ENDDATE}}",
+        "endMonth": "{{VERIFIED_ENDMONTH}}",
+        "endYear": "{{VERIFIED_ENDYEAR}}",
+        "currentlyWorkHere": false,
+        "bullets": [
+          "{{VERIFIED_ACHIEVEMENT}}"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "{{VERIFIED_DEGREE}}",
+        "fieldOfStudy": "{{MASTER_FIELD}}",
+        "institution": "{{MASTER_UNIVERSITY}}",
+        "location": "{{MASTER_CITY_COUNTRY}}",
+        "startMonth": "{{VERIFIED_STARTMONTH}}",
+        "startYear": "{{VERIFIED_STARTYEAR}}",
+        "endMonth": "{{VERIFIED_ENDMONTH}}",
+        "endYear": "{{VERIFIED_ENDYEAR}}",
+        "gpa": "{{OPTIONAL_GPA}}",
+        "details": "{{VERIFIED_DETAILS}}"
+      },
+      {
+        "degree": "{{VERIFIED_DEGREE}}",
+        "fieldOfStudy": "{{BACHELOR_FIELD}}",
+        "institution": "{{BACHELOR_UNIVERSITY}}",
+        "location": "{{BACHELOR_CITY_COUNTRY}}",
+        "startMonth": "{{VERIFIED_STARTMONTH}}",
+        "startYear": "{{VERIFIED_STARTYEAR}}",
+        "endMonth": "{{VERIFIED_ENDMONTH}}",
+        "endYear": "{{VERIFIED_ENDYEAR}}",
+        "details": "{{VERIFIED_DETAILS}}"
+      }
+    ],
+    "projects": [
+      {
+        "name": "{{VERIFIED_PROJECT_NAME}}",
+        "includeWhenTechnical": true,
+        "bullets": [
+          "{{VERIFIED_PROJECT_RESULT}}"
+        ]
+      }
+    ],
+    "additionalNote": "{{VERIFIED_ADDITIONALNOTE}}"
+  }
+}

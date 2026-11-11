@@ -1,0 +1,31 @@
+{
+  "name": "job-application-automation-kit",
+  "version": "1.0.0",
+  "description": "Reusable, privacy-sanitized multi-assistant job discovery, role-tailored CV generation, multi-ATS form automation, and tracker reconciliation toolkit.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "check": "node scripts/verify_sanitization.js --syntax-only",
+    "scan:pii": "node scripts/verify_sanitization.js --scan",
+    "test": "node --test tests/smoke_local.test.js",
+    "verify": "npm run check && npm run scan:pii && npm test",
+    "doctor": "node src/lib/config.js --doctor"
+  },
+  "dependencies": {
+    "playwright-core": "^1.50.0"
+  },
+  "optionalDependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "keywords": [
+    "job-automation",
+    "playwright",
+    "cdp",
+    "cv-generator",
+    "ats",
+    "google-sheets",
+    "ai-workflow"
+  ]
+}

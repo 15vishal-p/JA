@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Notice period / availability",
+    "answer": "{{CONFIRM_WITH_CURRENT_USER}}",
+    "scope": "Applications generally",
+    "confirmedOn": "YYYY-MM-DD",
+    "source": "Unconfirmed example; ask current user",
+    "reuseRule": "Reuse only after user confirmation within the recorded scope."
+  },
+  {
+    "question": "Travel availability",
+    "answer": "{{CONFIRM_WITH_CURRENT_USER}}",
+    "scope": "Applications generally",
+    "confirmedOn": "YYYY-MM-DD",
+    "source": "Unconfirmed example; ask current user",
+    "reuseRule": "Reuse only after user confirmation within the recorded scope."
+  },
+  {
+    "question": "Salary expectation",
+    "answer": "{{CONFIRM_WITH_CURRENT_USER}}",
+    "scope": "Role-specific salary and currency",
+    "confirmedOn": "YYYY-MM-DD",
+    "source": "Unconfirmed example; ask current user",
+    "reuseRule": "Reuse only after user confirmation within the recorded scope."
+  },
+  {
+    "question": "Target language proficiency",
+    "answer": "{{CONFIRM_WITH_CURRENT_USER}}",
+    "scope": "Language screening",
+    "confirmedOn": "YYYY-MM-DD",
+    "source": "Unconfirmed example; ask current user",
+    "reuseRule": "Reuse only after user confirmation within the recorded scope."
+  },
+  {
+    "question": "Employer-specific non-compete / conflict of interest / privacy consent",
+    "answer": "{{CONFIRM_WITH_CURRENT_USER}}",
+    "scope": "Specific employer only",
+    "confirmedOn": "YYYY-MM-DD",
+    "source": "Unconfirmed example; ask current user",
+    "reuseRule": "Reuse only after user confirmation within the recorded scope."
+  }
+]

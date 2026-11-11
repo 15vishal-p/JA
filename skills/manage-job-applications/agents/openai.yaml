@@ -1,0 +1,14 @@
+interface:
+  display_name: Job Application Workflow
+  short_description: Find jobs, tailor CVs and track verified applications
+  default_prompt: Use $manage-job-applications to manage my job search using my verified
+    profile and connected tools.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
