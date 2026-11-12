@@ -13,3 +13,8 @@ __pycache__/
 *.docx
 screenshots/
 receipts/
+
+# Private login documents must never enter source history
+login.md
+log in.md
+LOGIN.md

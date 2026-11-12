@@ -1,4 +1,4 @@
-# Antigravity source toolkit (experimental)
+# Antigravity source toolkit (portal adapters)
 
 Sanitized source supplied by Antigravity, with additional review fixes. These are platform-specific Node scripts, separate from the portable AI instructions in `../../skills/manage-job-applications`.
 

@@ -1,6 +1,6 @@
-// Experimental imported adapter: review mappings and host policy before use.
+// Portal-specific imported adapter: review mappings and host policy before use.
 if (require.main === module && process.env.JOBKIT_ENABLE_EXPERIMENTAL !== '1') {
-  throw new Error('Experimental adapter disabled. Review source and configuration before setting JOBKIT_ENABLE_EXPERIMENTAL=1.');
+  throw new Error('Portal adapter disabled. Review source and configuration before setting JOBKIT_ENABLE_EXPERIMENTAL=1.');
 }
 /**
  * SANITIZED ORIGINAL SCRIPT: step46_audit_counts_and_sumup_embed.js

@@ -2,7 +2,7 @@
 
 A portable AI skill for discovering jobs, assessing fit, preparing truthful tailored CVs, completing authorized applications and maintaining evidence-backed trackers.
 
-This is an instruction-based workflow, not a standalone auto-apply bot. It requires an AI host with the appropriate browser, file, connector and scheduling tools. Login, verification and some declarations can require user participation. The sanitized Antigravity source toolkit is bundled under `skills/manage-job-applications/scripts/antigravity`. Browser adapters are experimental and disabled by default; account sessions are never bundled.
+This is an instruction-based workflow, not a standalone auto-apply bot. It requires an AI host with the appropriate browser, file, connector and scheduling tools. Login, verification and some declarations can require user participation. The sanitized Antigravity source toolkit is bundled under `skills/manage-job-applications/scripts/antigravity`. Browser adapters require portal-specific verification and explicit enablement; account sessions are never bundled.
 
 ## Use
 

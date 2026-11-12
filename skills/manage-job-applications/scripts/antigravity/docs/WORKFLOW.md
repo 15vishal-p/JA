@@ -1,4 +1,4 @@
-> Review amendments: actual residence must remain accurate; a job city is a labeled target. All example answers require the current user's confirmation. Live adapters are experimental and disabled unless explicitly enabled. Google storage is partial; use connected Drive tools for verified PDF archiving. Historical descriptions below describe the supplied export and do not supersede these amendments. No live portal tests were performed.
+> Review amendments: actual residence must remain accurate; a job city is a labeled target. All example answers require the current user's confirmation. Live adapters require portal-specific verification and are disabled unless explicitly enabled. Google storage is partial; use connected Drive tools for verified PDF archiving. Historical descriptions below describe the supplied export and do not supersede these amendments. No live portal tests were performed.
 
 # Complete Job Application Workflow
 
