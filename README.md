@@ -1,4 +1,6 @@
-# Job Automation
+# JA — Job Automation
+
+Built for Antigravity, with portable instructions for other AI hosts. The project owner reports smooth career-portal login workflows in Antigravity; this is user-reported experience, not a guarantee for every portal.
 
 A portable AI skill for discovering jobs, assessing fit, preparing truthful tailored CVs, completing authorized applications and maintaining evidence-backed trackers.
 
