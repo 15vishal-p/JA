@@ -28,7 +28,7 @@ Configure daily, retry and weekly summaries only when requested, using the user'
 
 ## Authorized automatic login from private storage
 
-Follow the active browser’s authentication rules. If reading credential files or entering passwords is prohibited, request secure user sign-in. Never switch tools to circumvent that restriction. Resume only after verifying authentication. A successful login in another browser setup does not override the current setup’s restrictions.
+Use the active host’s supported sign-in method; request secure user sign-in when required, and verify authentication before resuming.
 
 Reuse an authenticated session first. Prefer the host's supported password manager or credential vault. Only when the active host permits credential-file access and entry, and the current user explicitly authorizes their private `login.md` (or `log in.md`) for a specified website, locate only that file in their connected private storage and read only the relevant site's entry. Confirm the exact official HTTPS login origin and account scope before entering credentials. Do not infer authority for other sites, other accounts, account creation or job submission from login permission.
 
@@ -47,3 +47,7 @@ The user reports a successful Swiss Re sign-in through the official application 
 2. Ask which official sites/accounts the user wants login assistance for and whether to use a password manager, private credential file or manual sign-in. Do not ask for passwords in chat. If they choose file-based login, create an empty `login.md` in the selected private storage, outside the cloned repository, only after confirming private access. Include fields for official login URL, account identifier, password-manager reference or privately entered password, and authorized scope. Let the user enter secrets directly through an appropriate private interface. Never upload populated credentials as part of the public skill.
 3. Recommend making personal working repositories private, but explain that private Git repositories still retain secret history and can be cloned or shared. Keep `login.md`, `log in.md`, real profiles and credentials outside version control regardless of visibility. The public JA distribution contains instructions and placeholders only. Do not change repository visibility without authorization.
 4. Verify source and destination authorization before each new site's sign-in. Reuse existing scoped authorization where applicable; the file's existence does not authorize all listed sites or submissions.
+
+## Antigravity usage
+
+Use this workflow with Antigravity’s available browser, local Node toolkit and connected storage. The project owner reports smooth career-portal login in Antigravity. Treat this as reported experience; inspect the current portal and verify each outcome. Other AI hosts may offer different tools and sign-in methods.
