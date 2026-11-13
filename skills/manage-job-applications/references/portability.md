@@ -17,4 +17,4 @@ Keep one private profile per candidate and a confirmed-answer register with answ
 
 Do not reuse another candidate's eligibility, language level, salary minimum, email, street address, employer consent or personal facts. Do not reuse a broad consent answer for a different company's declaration.
 
-This folder is a reusable workflow distilled from a user-supplied Antigravity work report and observed tracker-discovery workflow. It does not include or claim to reproduce the original Node.js scripts, browser session, portal adapters or OAuth helpers. Request a sanitized source export before claiming the original automation was published.
+The optional Antigravity toolkit is bundled under scripts/antigravity and retains its portal-specific adapter and partial Google-storage limits. Codex, Claude, Antigravity and other hosts map the four role guides to available tools. Run onboarding at first invocation because portable Markdown cannot guarantee an installation hook. Use native specialist agents when supported or separate sequential role passes otherwise, and report the actual execution mode.
