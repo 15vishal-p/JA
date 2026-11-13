@@ -11,6 +11,12 @@ Create or map these locations without overwriting existing files. Record actual 
 ```text
 Job Applications/
   setup.md
+  workflow.md
+  prompts/
+    job-search.md
+    cv-creation.md
+    cv-audit.md
+    application.md
   profile.json
   rules.md
   confirmed-answers.md
@@ -65,6 +71,8 @@ Each entry has official HTTPS origin, employer/tenant where relevant, username, 
 
 Use the research locations chosen in Step 3. Ask whether the user has research/vision documents ready or wants to add them later. Inspect accessible supplied documents, record sources and dates, and map them to the folders above using `resources/README.md`. Missing optional research does not block supported work. Mark dedicated research gaps honestly.
 
-## Step 7. Check setup and start
+## Step 7. Create the workflow, check and start
 
-Save storage references, sources, rules, research routes, login-file reference without contents, authority and remaining questions in `setup.md`. Complete setup only when inputs needed for the requested mode exist. Pending login does not block discovery or CV work. Show a short setup summary with storage, profile source, active roles, execution mode, coordinator, allowed actions, account readiness and missing inputs. Confirm the selected folder and next task. For separate chats deliver the four filled prompts and explain how the next role finds completed handoffs. A setup interview alone does not launch those chats. Start the first authorized task that current tools can complete. Schedules require a separate user request and enabled scheduler.
+Automatically create the personalized working workflow using `workspace-workflow.md`. Use `assets/workflow.template.md` for the saved workflow, generate and save the four filled role prompts, initialize or map the candidate summary/job tracker/progress summary and handoff index, and link their actual references. Perform these writes through supported tools without asking the user to build the workflow manually. Verify every created record by readback and save completed references before retrying a partial setup. Reuse and extend existing workflow records on later runs.
+
+Save storage references, sources, rules, research routes, login-file reference without contents, authority and remaining questions in `setup.md`. Complete setup only when inputs needed for the requested mode exist. Pending login does not block discovery or CV work. Show a short setup summary with storage, profile source, active roles, execution mode, coordinator, allowed actions, account readiness and missing inputs. Give the actual saved workflow link or path, selected folder and next task. For separate chats deliver the four filled prompts and explain how the next role finds completed handoffs. A setup interview alone does not launch those chats. Start the first authorized task that current tools can complete. Schedules require a separate user request and enabled scheduler.

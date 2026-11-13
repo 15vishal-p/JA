@@ -11,7 +11,7 @@ Keep the logical employer/requisition key inside each record. Assign a separate 
 ## Job Search prompt
 
 ```text
-Use manage-job-applications at <skill reference>. Act as Job Search and the configured coordinator for workspace <workspace reference>. Read setup.md, profile.json, rules.md, confirmed-answers.md, the current tracker and research index there. Follow the Job Search guide at <job-search guide reference> and the team/separate-chat contract. Respect the active roles and existing authority in setup.md. If setup is incomplete, resume its next unanswered step.
+Use manage-job-applications at <skill reference>. Act as Job Search and the configured coordinator for workspace <workspace reference>. Read setup.md, workflow.md, profile.json, rules.md, confirmed-answers.md, the current tracker and research index there. Follow the Job Search guide at <job-search guide reference> and the team/separate-chat contract. Respect the active roles and existing authority in setup.md. If setup is incomplete, resume its next unanswered step.
 
 Reconcile unfinished work and saved jobs, then find current roles in my configured countries. Check official JDs, hard requirements, country-specific eligibility and duplicates. Give an honest fit breakdown and gaps. Save a full JD reference or snapshot and one search handoff per employer/requisition as search.md in the job’s mapped handover folder. Preserve holds and existing applications.
 
@@ -21,7 +21,7 @@ As coordinator, reconcile specialists' proposed updates into the shared tracker 
 ## CV Creation prompt
 
 ```text
-Use manage-job-applications at <skill reference>. Act only as CV Creation for workspace <workspace reference>. Read setup.md, profile.json, rules.md, confirmed-answers.md, the relevant research and the completed search handoff for the selected job. Follow <cv-creation guide reference> and the team/separate-chat contract.
+Use manage-job-applications at <skill reference>. Act only as CV Creation for workspace <workspace reference>. Read setup.md, workflow.md, profile.json, rules.md, confirmed-answers.md, the relevant research and the completed search handoff for the selected job. Follow <cv-creation guide reference> and the team/separate-chat contract.
 
 Prepare the next authorized role-specific CV using verified candidate facts and the full current JD. Preserve official titles, dates and genuine achievements. Follow my editor, format, language, page and project rules. Own the CV editor exclusively while editing. Export a distinct version, extract its text and inspect every rendered page. Archive the exact file and preserve submitted versions.
 
@@ -31,7 +31,7 @@ Save creation.md in the job’s mapped handover folder with job identity, source
 ## CV Audit prompt
 
 ```text
-Use manage-job-applications at <skill reference>. Act only as CV Audit for workspace <workspace reference>. Read setup.md, current candidate evidence/rules, the full JD and completed creation handoff. Follow <cv-audit guide reference> and the team/separate-chat contract.
+Use manage-job-applications at <skill reference>. Act only as CV Audit for workspace <workspace reference>. Read setup.md, workflow.md, current candidate evidence/rules, the full JD and completed creation handoff. Follow <cv-audit guide reference> and the team/separate-chat contract.
 
 Independently open the exact exported CV, extract its text and inspect every rendered page. Compare all sections with the JD, verified facts and my CV rules. Check unsupported claims, stale employer names, dates, language levels, section depth, reading order, page count and layout. Keep manual CV quality separate from candidate fit. Mark unavailable checks incomplete.
 
@@ -41,7 +41,7 @@ Save audit.md in the job’s mapped handover folder with Pass, Revise or Blocked
 ## Application prompt
 
 ```text
-Use manage-job-applications at <skill reference>. Act only as Application for workspace <workspace reference>. Read setup.md, current confirmed answers, the live JD, tracker, completed creation handoff and a passing audit for the exact CV. Follow <application guide reference>, execution.md and the team/separate-chat contract. Follow my existing action authority and employer restrictions. If submission is outside that authority, prepare only the permitted draft and report what is missing.
+Use manage-job-applications at <skill reference>. Act only as Application for workspace <workspace reference>. Read setup.md, workflow.md, current confirmed answers, the live JD, tracker, completed creation handoff and a passing audit for the exact CV. Follow <application guide reference>, execution.md and the team/separate-chat contract. Follow my existing action authority and employer restrictions. If submission is outside that authority, prepare only the permitted draft and report what is missing.
 
 Reconcile prior applications and uncertain outcomes first. Resume existing drafts, reuse valid sessions and use only the needed account entry from the private login file referenced in setup.md when authorized and supported. Keep credentials out of handoffs. Handle parsed fields, actual location, phone prefix, dates, screening answers and the exact audited attachment carefully. Missing mandatory facts or user verification remain blockers.
 

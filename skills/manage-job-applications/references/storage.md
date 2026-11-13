@@ -5,3 +5,5 @@ Follow [onboarding.md](onboarding.md) for the user-selected Drive or local choic
 For Drive use connected tools and record returned IDs. For local storage record an absolute accessible path outside the public repository. Preserve files and sharing settings. Verify a harmless write and readback before reporting success. Disclose temporary storage when the host cannot access a persistent device folder and provide downloadable outputs and a checkpoint.
 
 Keep private profile facts, research, CVs, answers, receipts, handovers and login files in this workspace. File-based credentials use secrets/login.md or an explicitly selected existing file following execution.md. Publish only generic instructions and empty examples. Ignore private workspace paths and inspect tracked files before publication because ignore rules cannot remove already tracked contents.
+
+During setup automatically create the personalized workflow, saved prompts and tracker views described in [workspace-workflow.md](workspace-workflow.md). Record actual created references and verify readback. Reuse existing tracker IDs and preserve manual additions on reruns.

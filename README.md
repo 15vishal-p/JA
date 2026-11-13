@@ -26,9 +26,15 @@ The AI follows [the onboarding guide](skills/manage-job-applications/references/
 4. **Choose one chat or four separate chats.** Keep the workflow together, or use separate Job Search, CV Creation, CV Audit and Application chats. The AI gives four personalized prompts for the separate-chat choice. Choose which roles run now.
 5. **Set up relevant accounts.** Tell the AI which job boards, employer portals and CV editors you use and which are already signed in. Use an existing session, supported password manager, manual sign-in or your private `secrets/login.md`. Enter credentials directly into your selected private file. Search-only work can skip accounts it does not need.
 6. **Add research and vision.** Point to your documents or add them later. Research folders cover Schengen, Slovakia, India/Western markets, CV creation, CV auditing and applications.
-7. **Check and start.** Review the saved setup summary and missing inputs. The AI starts the first permitted task or gives you the filled prompts and handoff instructions for your chosen chats.
+7. **Create the workflow and start.** The AI automatically creates your personalized workflow document, four saved role prompts, candidate summary, job tracker, progress summary and handoff index in your chosen workspace. It fills these from your setup answers and verifies the saved files. Review its setup summary and missing inputs. The AI starts the first permitted task or gives you the filled prompts and handoff instructions for your chosen chats.
 
 Installing files does not itself create chats, connect accounts or start schedules. Each AI tool needs suitable file, browser and connector access for the tasks you select. Configure any recurring work through that tool's scheduler.
+
+## What setup creates automatically
+
+Your saved workflow links your profile, rules, research, tracker, CV archive, audit reports, application evidence and role handoffs. It records which roles are active, what each role produces and the next action. Your AI creates and fills it during first-use setup, then keeps it current as work progresses. You supply your preferences and account access.
+
+For Drive, setup creates or reuses a tracker with Candidate Profile Summary, Active Jobs and progress totals. Local setup creates CSV and Markdown equivalents. Existing trackers and history are preserved. The four filled prompts are saved so you can reuse them in one chat or separate chats. The workflow uses the same discovery/scoring/tracking structure as the supplied Drive workflow, extended with CV creation, audit and verified application handoffs.
 
 ## Choose how the four roles work
 
@@ -48,6 +54,7 @@ Use [the separate-chat prompts and handoff instructions](skills/manage-job-appli
 | Need | Read |
 | --- | --- |
 | Setup questions and private folder layout | [Onboarding](skills/manage-job-applications/references/onboarding.md) |
+| Automatic workflow creation and tracker views | [Workspace workflow](skills/manage-job-applications/references/workspace-workflow.md) |
 | Role order, ownership and audit gate | [Team coordination](skills/manage-job-applications/references/team.md) |
 | Four ready-to-personalize chat prompts | [Separate chats](skills/manage-job-applications/references/separate-chats.md) |
 | Add research and check source coverage | [Research library](skills/manage-job-applications/resources/README.md) |
