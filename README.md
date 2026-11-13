@@ -1,4 +1,4 @@
-# JA — Job Automation
+# Job Automation Skill
 
 One portable skill with Job Search, CV Creation, CV Audit and Application roles for Codex, Claude, Antigravity and other capable AI hosts. The project owner reports smooth career-portal login workflows in Antigravity; this is user-reported experience, not a guarantee for every portal.
 
@@ -8,7 +8,7 @@ This is an instruction-based workflow, not a standalone auto-apply bot. It requi
 
 ## Install and start
 
-1. Download or clone [JA](https://github.com/15vishal-p/JA).
+1. Download or clone [Job Automation Skill](https://github.com/15vishal-p/job-automation-skill).
 2. Install the complete `skills/manage-job-applications` folder using your AI tool's supported skill mechanism. Keep its references, resources and assets together. For a tool that accepts project instructions or attachments, provide `SKILL.md` and the referenced files there.
 3. Start a chat and paste the prompt below. The AI begins the numbered setup interview on first use. A host-supported welcome hook may start it earlier.
 

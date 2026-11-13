@@ -3,7 +3,7 @@ name: manage-job-applications
 description: Manage a job search from verified candidate facts through vacancy discovery, fit assessment, truthful role-specific CV tailoring, application preparation, authorized submission and evidence-backed tracking. Use for applying to jobs, continuing unfinished applications, auditing tailored CVs, reconciling employer confirmations, scheduling discovery, or monitoring another agent's job-application work. Adapt to the current AI host's available browser, files, connectors and scheduling tools.
 ---
 
-# Job Application Workflow
+# Job Automation Skill
 
 ## Establish the working contract
 

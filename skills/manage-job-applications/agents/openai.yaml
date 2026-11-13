@@ -1,5 +1,5 @@
 interface:
-  display_name: Job Application Workflow
+  display_name: Job Automation Skill
   short_description: Find jobs, tailor CVs and track verified applications
   default_prompt: Use $manage-job-applications to manage my job search using my verified
     profile and connected tools.
